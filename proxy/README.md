@@ -12,19 +12,26 @@ tags:
 
 ## Also known as
 Surrogate
+代理模式
 
 ## Intent
 Provide a surrogate or placeholder for another object to control
 access to it.
+
+为另一个要控制的对象提供一个代理或占位符
+访问它。
 
 ## Explanation
 Real world example
 
 > Imagine a tower where the local wizards go to study their spells. The ivory tower can only be accessed through a proxy which ensures that only the first three wizards can enter. Here the proxy represents the functionality of the tower and adds access control to it.
 
+> 想象一下当地的巫师去研究他们的魔法的塔。象牙塔只能通过一个代理访问，该代理确保只有前三个向导可以进入。在这里，代理表示塔的功能，并向它添加访问控制。
+
 In plain words
 
 > Using the proxy pattern, a class represents the functionality of another class.
+使用代理模式，类表示另一个类的功能。
 
 Wikipedia says
 
@@ -35,8 +42,9 @@ Wikipedia says
 Taking our wizard tower example from above. Firstly we have the wizard tower interface and the ivory tower class
 
 ```java
-public interface WizardTower {
 
+// 委托类实现的接口
+public interface WizardTower {
   void enter(Wizard wizard);
 }
 

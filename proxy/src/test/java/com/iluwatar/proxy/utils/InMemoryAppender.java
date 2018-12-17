@@ -30,33 +30,32 @@ import org.slf4j.LoggerFactory;
 import java.util.LinkedList;
 import java.util.List;
 
-
 /**
  * InMemory Log Appender Util.
  */
 public class InMemoryAppender extends AppenderBase<ILoggingEvent> {
-  private List<ILoggingEvent> log = new LinkedList<>();
+	private List<ILoggingEvent> log = new LinkedList<>();
 
-  public InMemoryAppender(Class clazz) {
-    ((Logger) LoggerFactory.getLogger(clazz)).addAppender(this);
-    start();
-  }
+	public InMemoryAppender(Class clazz) {
+		((Logger) LoggerFactory.getLogger(clazz)).addAppender(this);
+		start();
+	}
 
-  public InMemoryAppender() {
-    ((Logger) LoggerFactory.getLogger("root")).addAppender(this);
-    start();
-  }
+	public InMemoryAppender() {
+		((Logger) LoggerFactory.getLogger("root")).addAppender(this);
+		start();
+	}
 
-  @Override
-  protected void append(ILoggingEvent eventObject) {
-    log.add(eventObject);
-  }
+	@Override
+	protected void append(ILoggingEvent eventObject) {
+		log.add(eventObject);
+	}
 
-  public boolean logContains(String message) {
-    return log.stream().anyMatch(event -> event.getFormattedMessage().equals(message));
-  }
+	public boolean logContains(String message) {
+		return log.stream().anyMatch(event -> event.getFormattedMessage().equals(message));
+	}
 
-  public int getLogSize() {
-    return log.size();
-  }
+	public int getLogSize() {
+		return log.size();
+	}
 }

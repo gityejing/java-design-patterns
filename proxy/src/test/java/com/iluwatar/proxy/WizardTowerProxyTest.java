@@ -32,6 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Tests for {@link WizardTowerProxy}
+ * 测试代理类的功能
  */
 public class WizardTowerProxyTest {
 
@@ -49,6 +50,8 @@ public class WizardTowerProxyTest {
 
   @Test
   public void testEnter() throws Exception {
+	  
+	// 初始化四个巫师
     final Wizard[] wizards = new Wizard[]{
         new Wizard("Gandalf"),
         new Wizard("Dumbledore"),
@@ -56,7 +59,9 @@ public class WizardTowerProxyTest {
         new Wizard("Merlin")
     };
 
+    // 巫师塔代理类
     final WizardTowerProxy proxy = new WizardTowerProxy(new IvoryTower());
+    
     for (Wizard wizard : wizards) {
       proxy.enter(wizard);
     }

@@ -27,15 +27,15 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * The object to be proxyed.
- * 
+ * The object to be proxyed. 象牙塔
+ *  巫师塔的一个具体实现，没有做进入人数的限制
  */
 public class IvoryTower implements WizardTower {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(IvoryTower.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(IvoryTower.class);
 
-  public void enter(Wizard wizard) {
-    LOGGER.info("{} enters the tower.", wizard);
-  }
+	public void enter(Wizard wizard) {
+		LOGGER.info("{} enters the tower.", wizard);
+	}
 
 }

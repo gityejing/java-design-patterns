@@ -28,6 +28,9 @@ import org.slf4j.LoggerFactory;
 /**
  * 
  * The proxy controlling access to the {@link IvoryTower}.
+ * 	巫师塔代理类，
+ * 
+ * 	对巫师塔的功能进行增强，最多只允许三个巫师进入到塔中，操作三个，就进行日志的记录
  * 
  */
 public class WizardTowerProxy implements WizardTower {
@@ -47,7 +50,7 @@ public class WizardTowerProxy implements WizardTower {
   @Override
   public void enter(Wizard wizard) {
     if (numWizards < NUM_WIZARDS_ALLOWED) {
-      tower.enter(wizard);
+      tower.enter(wizard);// 被代理类的方法
       numWizards++;
     } else {
       LOGGER.info("{} is not allowed to enter!", wizard);

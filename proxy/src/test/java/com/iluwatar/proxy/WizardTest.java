@@ -33,6 +33,7 @@ public class WizardTest {
 
   @Test
   public void testToString() throws Exception {
+	  // 一些巫师的名字：甘道夫，邓布利多，奥兹，梅林
     final String[] wizardNames = {"Gandalf", "Dumbledore", "Oz", "Merlin"};
     for (String name : wizardNames) {
       assertEquals(name, new Wizard(name).toString());
